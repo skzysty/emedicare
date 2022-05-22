@@ -1,7 +1,9 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:experiment/util/doctor.dart';
-import 'package:experiment/util/service_card.dart';
+import 'package:emedicare/util/doctor.dart';
+import 'package:emedicare/util/service_card.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
