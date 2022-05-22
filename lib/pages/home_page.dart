@@ -41,7 +41,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
       ),
 
       bottomNavigationBar: Material(
-        color: Colors.blue,
+        color: Colors.green,
         child: new TabBar(
           controller: _controller,
             tabs:<Widget>[
