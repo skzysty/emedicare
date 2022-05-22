@@ -34,7 +34,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
 
         leading: new Icon(Icons.menu),
         actions: <Widget>[
-          new IconButton(icon: new Icon(Icons.person), onPressed: (null)
+          new IconButton(icon: new Icon(Icons.notifications), onPressed: (null)
           ),
         ],
         elevation: 10.0,
