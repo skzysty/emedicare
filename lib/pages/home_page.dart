@@ -35,7 +35,7 @@ class _HomePageState extends State<HomePage>
           elevation: 10.0,
         ),
         bottomNavigationBar: Material(
-          color: Colors.blue,
+          color: Colors.amber,
           child: new TabBar(
             controller: _controller,
             tabs: <Widget>[
