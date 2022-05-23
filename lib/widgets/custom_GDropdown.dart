@@ -46,7 +46,7 @@ class _GDropdownState extends State<GDropdown> {
                 child: Text(
                   item,
                   style: const TextStyle(
-                    fontSize: 14,
+                    fontSize: 15,
                   ),
                 ),
               ))
