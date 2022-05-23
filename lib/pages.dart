@@ -1,3 +1,5 @@
+// ignore_for_file: unnecessary_new
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:emedicare/util/doctor.dart';
@@ -8,6 +10,7 @@ class HomePage extends StatefulWidget {
 
   @override
   State<HomePage> createState() => _HomePageState();
+  //delete ko lang ang comment nato later
 }
 
 class _HomePageState extends State<HomePage>
