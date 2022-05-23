@@ -28,7 +28,7 @@ class _HomePageState extends State<HomePage>
           title: new Text(
             'E-Medicare',
             style: TextStyle(
-                color: Colors.black, fontWeight: FontWeight.bold, fontSize: 24),
+                color: Colors.white, fontWeight: FontWeight.bold, fontSize: 24),
           ),
           leading: new Icon(Icons.menu),
           actions: <Widget>[
@@ -37,7 +37,7 @@ class _HomePageState extends State<HomePage>
           elevation: 10.0,
         ),
         bottomNavigationBar: Material(
-          color: Colors.amber,
+          color: Colors.blue,
           child: new TabBar(
             controller: _controller,
             tabs: <Widget>[
@@ -62,37 +62,8 @@ class _HomePageState extends State<HomePage>
         backgroundColor: Colors.grey[300],
         body: SafeArea(
             child: Column(children: [
-          //app bar
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 25.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                // //name
-                // Column(
-                //   crossAxisAlignment: CrossAxisAlignment.start,
-                //   children: [
-                //     SizedBox(height: 8),
-                //     Text(
-                //       'E-Medicare',
-                //       style: TextStyle(
-                //           color: Colors.blueAccent,
-                //           fontWeight: FontWeight.bold,
-                //           fontSize: 24),
-                //     ),
-                //   ],
-                // ),
 
-                //notifications
-
-                // Container(
-                //     padding: EdgeInsets.all(8),
-                //     child: Icon(Icons.notifications)),
-              ],
-            ),
-          ),
-
-          SizedBox(height: 5),
+          SizedBox(height: 10),
 
           // search bar
           Padding(
@@ -110,7 +81,7 @@ class _HomePageState extends State<HomePage>
                     ),
                   ))),
 
-          SizedBox(height: 25),
+          SizedBox(height: 20),
 
           // card -> how do you feel?
           Padding(
