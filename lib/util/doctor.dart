@@ -1,3 +1,4 @@
+import 'package:emedicare/util/icon_and_text.dart';
 import 'package:flutter/material.dart';
 
 class Doctor extends StatelessWidget {
@@ -22,7 +23,7 @@ class Doctor extends StatelessWidget {
           padding: EdgeInsets.all(20),
           decoration: BoxDecoration(
             color: Colors.grey[350],
-            borderRadius: BorderRadius.circular(12),
+            borderRadius: BorderRadius.circular(30),
           ),
         child: Column(
           children: [
@@ -41,10 +42,18 @@ class Doctor extends StatelessWidget {
 
             Row(
               children: [
-                Icon(Icons.star,
-                color: Colors.yellow[600],
+                Wrap(
+                  children: List.generate(5, (index) => Icon(Icons.star, color: Colors.lightBlue[300], size: 15,)
+                )
                 ),
-                Text(rating),
+                SizedBox(width: 10,),
+                Text(
+                    rating,
+                  style: TextStyle(
+                    fontSize: 15,
+                    color: Colors.grey[500],
+                  ),
+                ),
               ],
             ),
             SizedBox(height: 05),
@@ -60,6 +69,26 @@ class Doctor extends StatelessWidget {
 
             //doctor title
             Text(doctorProfession),
+
+            SizedBox(
+              height: 5,
+            ),
+
+            Row(
+              children: [
+                IconandTextWidget(icon: Icons.circle_sharp,
+                    text: 'Available',
+                    iconColor: Colors.blue),
+                SizedBox(width: 5,),
+                IconandTextWidget(icon: Icons.location_on,
+                    text: '1.2km',
+                    iconColor: Colors.green),
+                SizedBox(width: 5,),
+                IconandTextWidget(icon: Icons.access_time_rounded,
+                    text: 'Offline',
+                    iconColor: Colors.red)
+              ],
+            )
           ],
         ),
     ),

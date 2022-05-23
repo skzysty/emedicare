@@ -83,7 +83,7 @@ class _HomePageState extends State<HomePage>
 
           SizedBox(height: 20),
 
-          // card -> how do you feel?
+          // card -> message
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 25.0),
             child: Container(
@@ -137,7 +137,7 @@ class _HomePageState extends State<HomePage>
             ),
           ),
 
-          SizedBox(height: 25),
+          SizedBox(height: 10),
 
           // horizonal listeview -> categories
           Container(
@@ -224,7 +224,7 @@ class _HomePageState extends State<HomePage>
             ),
           ),
 
-          SizedBox(height: 25),
+          SizedBox(height: 15),
 
           Expanded(
             child: ListView(
@@ -240,7 +240,7 @@ class _HomePageState extends State<HomePage>
                   doctorImagePath:
                       'lib/images/ashkan-forouzani-DPEPYPBZpB8-unsplash.jpg',
                   rating: '5.0',
-                  doctorName: 'Dr. S Wong Soap',
+                  doctorName: 'Dr. S. Wong Soap',
                   doctorProfession: 'Dermatologist',
                 ),
                 Doctor(
