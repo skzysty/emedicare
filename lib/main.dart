@@ -1,7 +1,8 @@
 import 'package:emedicare/registration.dart';
 import 'package:flutter/material.dart';
-import 'package:emedicare/pages/home_page.dart';
-import 'login_page.dart';
+import 'widgets/dropdowm.dart';
+// import 'login_page.dart';
+import 'almost_done.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: RegisterPage(),
+      home: AlmostDone(),
     );
   }
 }
