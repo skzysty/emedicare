@@ -27,7 +27,7 @@ class _LoginPageState extends State<LoginPage> {
               Text(
                 'E-Medicare',
                 style: TextStyle(
-                  color: Colors.red,
+                  color: Colors.blue,
                   fontWeight: FontWeight.bold,
                   fontSize: 50,
                 ),
