@@ -2,6 +2,7 @@
 
 import 'package:emedicare/registration.dart';
 import 'package:emedicare/registrationp3.dart';
+import 'package:emedicare/widgets/DatePicker.dart';
 import 'package:emedicare/widgets/Dropdown/custom_GDropdown.dart';
 import 'package:flutter/material.dart';
 import 'package:emedicare/widgets/primary_button.dart';
@@ -122,12 +123,12 @@ class _RegisterPageState2 extends State<RegisterPage2> {
                         child: GDropdown(),
                       ),
                     ),
-
+                    //DatePicker
                     Container(
                       alignment: Alignment.topLeft,
                       child: Padding(
                         padding: EdgeInsets.fromLTRB(6, 0, 175, 5),
-                        child: BDropdown(),
+                        child: DatePicker(),
                       ),
                     ),
 
@@ -152,7 +153,6 @@ class _RegisterPageState2 extends State<RegisterPage2> {
                         ),
                       ),
                     ),
-
                   ],
                 ),
               ),
@@ -177,7 +177,6 @@ class _RegisterPageState2 extends State<RegisterPage2> {
                   child: Text("Next"),
                 ),
               ),
-
 
               // CustomPrimaryButton(
               //   buttonColor: primaryBlue,
