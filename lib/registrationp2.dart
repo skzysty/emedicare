@@ -119,21 +119,25 @@ class _RegisterPageState2 extends State<RegisterPage2> {
                     Container(
                       alignment: Alignment.topLeft,
                       child: Padding(
-                        padding: EdgeInsets.fromLTRB(6, 0, 175, 5),
+                        padding: EdgeInsets.fromLTRB(0, 0, 0, 5),
                         child: GDropdown(),
                       ),
                     ),
+                    SizedBox(
+                      height: 5,
+                    ),
+
                     //DatePicker
                     Container(
                       alignment: Alignment.topLeft,
                       child: Padding(
-                        padding: EdgeInsets.fromLTRB(6, 0, 175, 5),
+                        padding: EdgeInsets.fromLTRB(0, 0, 0, 5),
                         child: DatePicker(),
                       ),
                     ),
 
                     SizedBox(
-                      height: 10,
+                      height: 5,
                     ),
 
                     Container(

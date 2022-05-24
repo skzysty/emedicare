@@ -20,7 +20,7 @@ class _DatePickerState extends State<DatePicker> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 200,
+      width: 320,
       height: 60,
       child: OutlinedButton(
         style: ButtonStyle(
@@ -30,10 +30,10 @@ class _DatePickerState extends State<DatePicker> {
         ),
         onPressed: _showDatePicker,
         child: Padding(
-          padding: const EdgeInsets.only(right: 60.0),
+          padding: const EdgeInsets.only(right: 200.0),
           child: Text(
             'Birthday',
-            style: TextStyle(color: Colors.black45),
+            style: TextStyle(fontSize: 16, color: Colors.black12),
           ),
         ),
       ),
