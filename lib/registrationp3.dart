@@ -1,8 +1,8 @@
-import 'package:emedicare/widgets/Barangay.dart';
-import 'package:emedicare/widgets/dropcity.dart';
-import 'package:emedicare/widgets/dropdowm.dart';
-import 'package:emedicare/widgets/postal_code.dart';
-import 'package:emedicare/widgets/street.dart';
+import 'package:emedicare/widgets/Dropdown/barangay.dart';
+import 'package:emedicare/widgets/Dropdown/dropcity.dart';
+import 'package:emedicare/widgets/Dropdown/dropcountry.dart';
+import 'package:emedicare/widgets/Dropdown/postal_code.dart';
+import 'package:emedicare/widgets/Dropdown/street.dart';
 import 'package:flutter/material.dart';
 import 'package:emedicare/widgets/primary_button.dart';
 import 'theme.dart';
