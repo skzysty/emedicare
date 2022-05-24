@@ -1,3 +1,4 @@
+import 'package:emedicare/login_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:emedicare/util/doctor.dart';
@@ -120,16 +121,36 @@ class _HomePageState extends State<HomePage>
                             ),
                           ),
                           SizedBox(height: 10),
+
+                          //Temporary Button
+
                           Container(
-                            padding: EdgeInsets.all(12),
-                            decoration: BoxDecoration(
-                              color: Colors.lightBlue[300],
-                              borderRadius: BorderRadius.circular(12),
+                            alignment: Alignment.center,
+                            child: ElevatedButton(
+                              onPressed: () => Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => LoginPage(),
+                                ),
+                              ),
+                              style: TextButton.styleFrom(
+                                backgroundColor: Color(0xff2972ff),
+                              ),
+                              child: Text("Take me there"),
                             ),
-                            child: Center(
-                              child: Text('Take me there'),
-                            ),
-                          )
+                          ),
+
+
+                          // Container(
+                          //   padding: EdgeInsets.all(12),
+                          //   decoration: BoxDecoration(
+                          //     color: Colors.lightBlue[300],
+                          //     borderRadius: BorderRadius.circular(12),
+                          //   ),
+                          //   child: Center(
+                          //     child: Text('Take me there'),
+                          //   ),
+                          // )
                         ],
                       ),
                     )

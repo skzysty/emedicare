@@ -1,5 +1,7 @@
 // ignore_for_file: prefer_const_constructors, unnecessary_string_escapes, prefer_const_literals_to_create_immutables, sort_child_properties_last
 
+import 'package:emedicare/registration.dart';
+import 'package:emedicare/registrationp3.dart';
 import 'package:emedicare/widgets/Dropdown/custom_GDropdown.dart';
 import 'package:flutter/material.dart';
 import 'package:emedicare/widgets/primary_button.dart';
@@ -151,22 +153,6 @@ class _RegisterPageState2 extends State<RegisterPage2> {
                       ),
                     ),
 
-                    // Container(
-                    //   child: MaterialButton(
-                    //     onPressed: () {},
-                    //     child: Padding(
-                    //       padding: const EdgeInsets.all(20.0),
-                    //       child: Text(
-                    //         'Birthday',
-                    //         style: TextStyle(
-                    //           color: Colors.white,
-                    //           fontSize: 16,
-                    //         ),
-                    //       ),
-                    //     ),
-                    //     color: Colors.blue,
-                    //   ),
-                    // )
                   ],
                 ),
               ),
@@ -174,11 +160,30 @@ class _RegisterPageState2 extends State<RegisterPage2> {
                 height: 25,
               ),
 
-              CustomPrimaryButton(
-                buttonColor: primaryBlue,
-                textValue: 'continue',
-                textColor: Colors.white,
+              //Temporary Button
+
+              Container(
+                alignment: Alignment.center,
+                child: ElevatedButton(
+                  onPressed: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => RegisterPage3(),
+                    ),
+                  ),
+                  style: TextButton.styleFrom(
+                    backgroundColor: Color(0xff2972ff),
+                  ),
+                  child: Text("Next"),
+                ),
               ),
+
+
+              // CustomPrimaryButton(
+              //   buttonColor: primaryBlue,
+              //   textValue: 'continue',
+              //   textColor: Colors.white,
+              // ),
               SizedBox(
                 height: 25,
               ),

@@ -1,3 +1,5 @@
+import 'package:emedicare/login_page.dart';
+import 'package:emedicare/registrationp2.dart';
 import 'package:flutter/material.dart';
 import 'package:emedicare/widgets/custom_checkbox.dart';
 import 'package:emedicare/widgets/primary_button.dart';
@@ -53,8 +55,11 @@ class _RegisterPageState extends State<RegisterPage> {
                     ),
                     GestureDetector(
                       onTap: () {
-                        Navigator.pop(
+                        Navigator.push(
                           context,
+                          MaterialPageRoute(
+                              builder: (context) => LoginPage(),
+                          )
                         );
                       },
                       child: Text(
@@ -160,11 +165,34 @@ class _RegisterPageState extends State<RegisterPage> {
               SizedBox(
                 height: 32,
               ),
-              CustomPrimaryButton(
-                buttonColor: primaryBlue,
-                textValue: 'Sign Up',
-                textColor: Colors.white,
+
+          //Temporary Button
+
+          Container(
+            alignment: Alignment.center,
+            child: ElevatedButton(
+              onPressed: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => RegisterPage2(),
+                ),
               ),
+              style: TextButton.styleFrom(
+                backgroundColor: Color(0xff2972ff),
+              ),
+              child: Text("Sign Up"),
+            ),
+          ),
+
+//Main Button after data fetching
+
+              // CustomPrimaryButton(
+              //   buttonColor: primaryBlue,
+              //   textValue: 'Sign Up',
+              //   textColor: Colors.white,
+              // ),
+
+
               SizedBox(
                 height: 25,
               ),

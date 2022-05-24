@@ -1,5 +1,8 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:emedicare/pages/home_page.dart';
+import 'package:emedicare/registration.dart';
+import 'package:emedicare/theme.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
@@ -37,9 +40,9 @@ class _LoginPageState extends State<LoginPage> {
               SizedBox(height: 10),
               // bringing keme
               Text(
-                'Bringing Healthcare close to you',
+                'Bringing Healthcare close to you!',
                 style: TextStyle(
-                  color: Colors.blueAccent,
+                  color: Colors.grey[500],
                   fontSize: 15,
                 ),
               ),
@@ -96,26 +99,45 @@ class _LoginPageState extends State<LoginPage> {
               ),
               SizedBox(height: 15),
 
-              // sign in button
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                child: Container(
-                  padding: EdgeInsets.all(20),
-                  decoration: BoxDecoration(
-                    color: Colors.blue,
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  child: Center(
-                      child: Text(
-                    'Log in',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 17,
+                  //Temporary Button
+
+                  Container(
+                    alignment: Alignment.center,
+                    child: ElevatedButton(
+                      onPressed: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => HomePage(),
+                        ),
+                      ),
+                      style: TextButton.styleFrom(
+                        backgroundColor: Color(0xff2972ff),
+                      ),
+                      child: Text("Sign Up"),
                     ),
-                  )),
-                ),
-              ),
+                  ),
+
+
+                  // sign in button
+              // Padding(
+              //   padding: const EdgeInsets.symmetric(horizontal: 25.0),
+              //   child: Container(
+              //     padding: EdgeInsets.all(20),
+              //     decoration: BoxDecoration(
+              //       color: Colors.blue,
+              //       borderRadius: BorderRadius.circular(12),
+              //     ),
+              //     child: Center(
+              //         child: Text(
+              //       'Log in',
+              //       style: TextStyle(
+              //         color: Colors.white,
+              //         fontWeight: FontWeight.bold,
+              //         fontSize: 17,
+              //       ),
+              //     )),
+              //   ),
+              // ),
               SizedBox(height: 25),
               // not a member? register now
               Row(
@@ -124,13 +146,21 @@ class _LoginPageState extends State<LoginPage> {
                   Text(
                     "Don't have an account?",
                   ),
-                  Text(
-                    ' Register Now',
-                    style: TextStyle(
-                      color: Color.fromARGB(255, 34, 60, 105),
-                      fontWeight: FontWeight.bold,
+
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => RegisterPage(),
+                          )
+                      );
+                    },
+                    child: Text(
+                      ' Register Now',
+                      style: regular16pt.copyWith(color: primaryBlue),
                     ),
-                  )
+                  ),
                 ],
               ),
             ]),

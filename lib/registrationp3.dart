@@ -1,3 +1,4 @@
+import 'package:emedicare/login_page.dart';
 import 'package:emedicare/widgets/Dropdown/barangay.dart';
 import 'package:emedicare/widgets/Dropdown/dropcity.dart';
 import 'package:emedicare/widgets/Dropdown/dropcountry.dart';
@@ -100,11 +101,31 @@ class _RegisterPage3State extends State<RegisterPage3> {
               SizedBox(
                 height: 15,
               ),
-              CustomPrimaryButton(
-                buttonColor: primaryBlue,
-                textValue: 'Continue',
-                textColor: Colors.white,
+
+              //Temporary Button
+
+              Container(
+                alignment: Alignment.center,
+                child: ElevatedButton(
+                  onPressed: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => LoginPage(),
+                    ),
+                  ),
+                  style: TextButton.styleFrom(
+                    backgroundColor: Color(0xff2972ff),
+                  ),
+                  child: Text("Sign Up"),
+                ),
               ),
+
+
+              // CustomPrimaryButton(
+              //   buttonColor: primaryBlue,
+              //   textValue: 'Continue',
+              //   textColor: Colors.white,
+              // ),
               SizedBox(
                 height: 15,
               ),
