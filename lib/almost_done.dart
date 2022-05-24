@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:emedicare/widgets/primary_button.dart';
 import 'theme.dart';
 
+//this is a comment
 class AlmostDone extends StatefulWidget {
   @override
   _AlmostDoneState createState() => _AlmostDoneState();
