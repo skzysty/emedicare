@@ -1,8 +1,10 @@
 import 'package:emedicare/login_page.dart';
+import 'package:emedicare/widget/navigation_drawer_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:emedicare/util/doctor.dart';
 import 'package:emedicare/util/service_card.dart';
+
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -17,13 +19,14 @@ class _HomePageState extends State<HomePage>
 
   void initState() {
     _controller = TabController(length: 5, vsync: this);
-    //comment
-  }
 
+  }
+//try
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: NavigationDrawerWidget(),
         appBar: new AppBar(
           backgroundColor: Colors.blue[350],
           title: new Text(
@@ -31,7 +34,7 @@ class _HomePageState extends State<HomePage>
             style: TextStyle(
                 color: Colors.white, fontWeight: FontWeight.bold, fontSize: 24),
           ),
-          leading: new Icon(Icons.menu),
+          // leading: new Icon(Icons.menu),
           actions: <Widget>[
             new IconButton(icon: new Icon(Icons.person), onPressed: (null)),
           ],
