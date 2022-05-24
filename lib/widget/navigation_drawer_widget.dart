@@ -1,3 +1,4 @@
+import 'package:emedicare/login_page.dart';
 import 'package:emedicare/pages/data/drawer_items.dart';
 import 'package:emedicare/pages/model/drawer_item.dart';
 import 'package:emedicare/pages/page/deployment_page.dart';
@@ -48,12 +49,15 @@ class NavigationDrawerWidget extends StatelessWidget {
               Spacer(),
               buildCollapseIcon(context, isCollapsed),
               const SizedBox(height: 12),
+              //logout
+              _createFooterItem(icon: Icons.exit_to_app, text: 'Logout', onTap: () => LoginPage())
             ],
           ),
         ),
       ),
     );
   }
+
 
   Widget buildList({
     required bool isCollapsed,
@@ -173,4 +177,20 @@ class NavigationDrawerWidget extends StatelessWidget {
       ),
     ],
   );
+
+  Widget _createFooterItem({required IconData icon, required String text, required GestureTapCallback onTap}){
+    return ListTile(
+      title: Row(
+        children: <Widget>[
+          Icon(icon),
+          Padding(
+            padding: EdgeInsets.only(left: 8.0),
+            child: Text(text),
+          )
+        ],
+      ),
+      onTap: onTap,
+    );
+  }
+
 }
