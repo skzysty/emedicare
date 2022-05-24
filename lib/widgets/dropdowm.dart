@@ -2,12 +2,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
 
-class GDropdown extends StatefulWidget {
+class Country extends StatefulWidget {
   @override
-  _GDropdownState createState() => _GDropdownState();
+  _CountryState createState() => _CountryState();
 }
 
-class _GDropdownState extends State<GDropdown> {
+class _CountryState extends State<Country> {
   List<String> genderitems = ['Philippines', 'Sigapore', 'Myanmar'];
   String? selectedvalue;
 
