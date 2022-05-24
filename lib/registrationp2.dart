@@ -2,7 +2,6 @@
 
 import 'package:emedicare/widgets/custom_GDropdown.dart';
 import 'package:flutter/material.dart';
-import 'package:emedicare/widgets/custom_checkbox.dart';
 import 'package:emedicare/widgets/primary_button.dart';
 import 'theme.dart';
 
