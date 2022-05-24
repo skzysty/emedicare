@@ -8,12 +8,12 @@ import 'package:emedicare/widgets/primary_button.dart';
 import 'theme.dart';
 
 //this is a comment
-class AlmostDone extends StatefulWidget {
+class RegisterPage3 extends StatefulWidget {
   @override
-  _AlmostDoneState createState() => _AlmostDoneState();
+  _RegisterPage3State createState() => _RegisterPage3State();
 }
 
-class _AlmostDoneState extends State<AlmostDone> {
+class _RegisterPage3State extends State<RegisterPage3> {
   bool passwordVisible = false;
   bool passwordConfrimationVisible = false;
   void togglePassword() {
