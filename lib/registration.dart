@@ -22,7 +22,6 @@ class _RegisterPageState extends State<RegisterPage> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: Colors.white,
-
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.fromLTRB(24.0, 100.0, 24.0, 0),
@@ -32,20 +31,17 @@ class _RegisterPageState extends State<RegisterPage> {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    'Create new\nAccount',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 40,
-                    )
-                  ),
+                  Text('Create new\nAccount',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 40,
+                      )),
                   SizedBox(
                     height: 5,
                   ),
                 ],
               ),
-
               Padding(
                 padding: EdgeInsets.only(left: 5.0),
                 child: Row(
@@ -69,7 +65,6 @@ class _RegisterPageState extends State<RegisterPage> {
                   ],
                 ),
               ),
-
               SizedBox(
                 height: 32,
               ),
@@ -149,7 +144,7 @@ class _RegisterPageState extends State<RegisterPage> {
                             onPressed: () {
                               setState(() {
                                 passwordConfrimationVisible =
-                                !passwordConfrimationVisible;
+                                    !passwordConfrimationVisible;
                               });
                             },
                           ),
@@ -165,7 +160,6 @@ class _RegisterPageState extends State<RegisterPage> {
               SizedBox(
                 height: 32,
               ),
-
               CustomPrimaryButton(
                 buttonColor: primaryBlue,
                 textValue: 'Sign Up',
@@ -174,7 +168,6 @@ class _RegisterPageState extends State<RegisterPage> {
               SizedBox(
                 height: 25,
               ),
-
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -197,7 +190,6 @@ class _RegisterPageState extends State<RegisterPage> {
                   ),
                 ],
               ),
-
             ],
           ),
         ),
