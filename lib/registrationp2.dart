@@ -1,5 +1,5 @@
 // ignore_for_file: prefer_const_constructors, unnecessary_string_escapes, prefer_const_literals_to_create_immutables, sort_child_properties_last
-
+// deleted check box
 import 'package:emedicare/widgets/custom_GDropdown.dart';
 import 'package:flutter/material.dart';
 import 'package:emedicare/widgets/primary_button.dart';
