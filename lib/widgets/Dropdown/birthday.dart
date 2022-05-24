@@ -8,7 +8,7 @@ class BDropdown extends StatefulWidget {
 }
 
 class _GDropdownState extends State<BDropdown> {
-  List<String> genderitems = ['Month', 'Day', 'Year'];
+  List<String> bday = ['Month', 'Day', 'Year'];
   String? selectedvalue;
 
   @override
@@ -40,7 +40,7 @@ class _GDropdownState extends State<BDropdown> {
       dropdownDecoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
       ),
-      items: genderitems
+      items: bday
           .map((item) => DropdownMenuItem<String>(
         value: item,
         child: Text(
