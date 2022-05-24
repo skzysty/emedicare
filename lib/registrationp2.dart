@@ -4,6 +4,7 @@ import 'package:emedicare/widgets/Dropdown/custom_GDropdown.dart';
 import 'package:flutter/material.dart';
 import 'package:emedicare/widgets/primary_button.dart';
 import 'theme.dart';
+import 'widgets/Dropdown/birthday.dart';
 
 class RegisterPage2 extends StatefulWidget {
   @override
@@ -26,7 +27,7 @@ class _RegisterPageState2 extends State<RegisterPage2> {
       backgroundColor: Colors.white,
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.fromLTRB(24.0, 100.0, 24.0, 0),
+          padding: EdgeInsets.fromLTRB(24.0, 40.0, 24.0, 0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -70,7 +71,7 @@ class _RegisterPageState2 extends State<RegisterPage2> {
                       ),
                     ),
                     SizedBox(
-                      height: 25,
+                      height: 10,
                     ),
                     Container(
                       decoration: BoxDecoration(
@@ -90,7 +91,7 @@ class _RegisterPageState2 extends State<RegisterPage2> {
                       ),
                     ),
                     SizedBox(
-                      height: 25,
+                      height: 10,
                     ),
                     Container(
                       decoration: BoxDecoration(
@@ -110,7 +111,7 @@ class _RegisterPageState2 extends State<RegisterPage2> {
                       ),
                     ),
                     SizedBox(
-                      height: 25,
+                      height: 10,
                     ),
                     Container(
                       alignment: Alignment.topLeft,
@@ -119,27 +120,58 @@ class _RegisterPageState2 extends State<RegisterPage2> {
                         child: GDropdown(),
                       ),
                     ),
+
                     Container(
-                      child: MaterialButton(
-                        onPressed: () {},
-                        child: Padding(
-                          padding: const EdgeInsets.all(20.0),
-                          child: Text(
-                            'Birthday',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 16,
+                      alignment: Alignment.topLeft,
+                      child: Padding(
+                        padding: EdgeInsets.fromLTRB(6, 0, 175, 5),
+                        child: BDropdown(),
+                      ),
+                    ),
+
+                    SizedBox(
+                      height: 10,
+                    ),
+
+                    Container(
+                      decoration: BoxDecoration(
+                        color: textWhiteGrey,
+                        borderRadius: BorderRadius.circular(50),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 20.0),
+                        child: TextFormField(
+                          decoration: InputDecoration(
+                            hintText: 'Phone',
+                            border: OutlineInputBorder(
+                              borderSide: BorderSide.none,
                             ),
                           ),
                         ),
-                        color: Colors.blue,
                       ),
-                    )
+                    ),
+
+                    // Container(
+                    //   child: MaterialButton(
+                    //     onPressed: () {},
+                    //     child: Padding(
+                    //       padding: const EdgeInsets.all(20.0),
+                    //       child: Text(
+                    //         'Birthday',
+                    //         style: TextStyle(
+                    //           color: Colors.white,
+                    //           fontSize: 16,
+                    //         ),
+                    //       ),
+                    //     ),
+                    //     color: Colors.blue,
+                    //   ),
+                    // )
                   ],
                 ),
               ),
               SizedBox(
-                height: 32,
+                height: 25,
               ),
 
               CustomPrimaryButton(
