@@ -121,6 +121,10 @@ class _FormDState extends State<FormD> {
               ),
               child: TakeMed(),
             ),
+            SizedBox(height: 10),
+            //CheckboxListTile(
+
+            // ),
           ],
         ),
       ),
