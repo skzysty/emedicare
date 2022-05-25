@@ -54,7 +54,7 @@ class _FormDState extends State<FormD> {
                 ],
               ),
             ),
-            SizedBox(height: 50),
+            SizedBox(height: 20),
             Text('Who is Experiencing these Symptoms?',
                 textAlign: TextAlign.right,
                 style: TextStyle(
@@ -133,7 +133,7 @@ class _FormDState extends State<FormD> {
               ),
               child: TakeMed(),
             ),
-            SizedBox(height: 30),
+            SizedBox(height: 15),
             //CheckboxListTile(
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -152,24 +152,24 @@ class _FormDState extends State<FormD> {
                     ),
                   ],
                 ),
-                Container(
-                  alignment: Alignment.center,
-                  child: ElevatedButton(
-                    onPressed: () => Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => HomePage(),
-                      ),
-                    ),
-                    style: TextButton.styleFrom(
-                      backgroundColor: Color(0xff2972ff),
-                    ),
-                    child: Text("Submit"),
-                  ),
-                )
               ],
             ),
-            // ),
+            SizedBox(height: 15),
+            Container(
+              alignment: Alignment.center,
+              child: ElevatedButton(
+                onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => HomePage(),
+                  ),
+                ),
+                style: TextButton.styleFrom(
+                  backgroundColor: Color(0xff2972ff),
+                ),
+                child: Text("Submit"),
+              ),
+            )
           ],
         ),
       ),
