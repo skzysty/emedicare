@@ -47,11 +47,23 @@ class NavigationDrawerWidget extends StatelessWidget {
                 isCollapsed: isCollapsed,
               ),
               Spacer(),
-              buildCollapseIcon(context, isCollapsed),
+              // buildCollapseIcon(context, isCollapsed),
               const SizedBox(height: 12),
-              //logout
-              _createFooterItem(icon: Icons.exit_to_app, text: 'Logout', onTap: () => LoginPage())
-            ],
+
+                //logout
+              Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: _createFooterItem(icon: Icons.exit_to_app,
+                    text: 'Logout',
+                    onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => LoginPage(),
+                      ),
+                    ),
+              ),
+              ),
+                ],
           ),
         ),
       ),
@@ -135,35 +147,35 @@ class NavigationDrawerWidget extends StatelessWidget {
     );
   }
 
-  Widget buildCollapseIcon(BuildContext context, bool isCollapsed) {
-    final double size = 52;
-    final icon = isCollapsed ? Icons.arrow_forward_ios : Icons.arrow_back_ios;
-    final alignment = isCollapsed ? Alignment.center : Alignment.centerRight;
-    final margin = isCollapsed ? null : EdgeInsets.only(right: 16);
-    final width = isCollapsed ? double.infinity : size;
-
-    return Container(
-      alignment: alignment,
-      margin: margin,
-      child: Material(
-        color: Colors.transparent,
-        child: InkWell(
-          child: Container(
-            width: width,
-            height: size,
-            child: Icon(icon, color: Colors.white),
-          ),
-          onTap: () {
-            final provider =
-            Provider.of<NavigationProvider>(context, listen: false);
-
-            provider.toggleIsCollapsed();
-          },
-        ),
-      ),
-    );
-  }
-
+  // Widget buildCollapseIcon(BuildContext context, bool isCollapsed) {
+  //   final double size = 52;
+  //   final icon = isCollapsed ? Icons.arrow_forward_ios : Icons.arrow_back_ios;
+  //   final alignment = isCollapsed ? Alignment.center : Alignment.centerRight;
+  //   final margin = isCollapsed ? null : EdgeInsets.only(right: 16);
+  //   final width = isCollapsed ? double.infinity : size;
+  //
+  //   return Container(
+  //     alignment: alignment,
+  //     margin: margin,
+  //     child: Material(
+  //       color: Colors.transparent,
+  //       child: InkWell(
+  //         child: Container(
+  //           width: width,
+  //           height: size,
+  //           child: Icon(icon, color: Colors.white),
+  //         ),
+  //         onTap: () {
+  //           final provider =
+  //           Provider.of<NavigationProvider>(context, listen: false);
+  //
+  //           provider.toggleIsCollapsed();
+  //         },
+  //       ),
+  //     ),
+  //   );
+  // }
+//comment
   Widget buildHeader(bool isCollapsed) => isCollapsed
       ? FlutterLogo(size: 48)
       : Row(
@@ -184,7 +196,7 @@ class NavigationDrawerWidget extends StatelessWidget {
         children: <Widget>[
           Icon(icon),
           Padding(
-            padding: EdgeInsets.only(left: 8.0),
+            padding: EdgeInsets.only(left: 24.0),
             child: Text(text),
           )
         ],
