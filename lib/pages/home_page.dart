@@ -1,4 +1,6 @@
+import 'package:emedicare/form.dart';
 import 'package:emedicare/login_page.dart';
+import 'package:emedicare/screens/chathomePage.dart';
 import 'package:emedicare/widget/navigation_drawer_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -16,6 +18,12 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage>
     with SingleTickerProviderStateMixin {
   late TabController _controller;
+
+  int currentTab = 0;
+  final List<Widget> screens = [
+    ChatHomePage(),
+  ];
+
 
   void initState() {
     _controller = TabController(length: 5, vsync: this);
@@ -36,10 +44,18 @@ class _HomePageState extends State<HomePage>
           ),
           // leading: new Icon(Icons.menu),
           actions: <Widget>[
-            new IconButton(icon: new Icon(Icons.person), onPressed: (null)),
+            new IconButton(icon: new Icon(Icons.message),
+      onPressed: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => ChatHomePage()),
+        );
+      }
+            ),
           ],
           elevation: 10.0,
         ),
+
         bottomNavigationBar: Material(
           color: Colors.blue,
           child: new TabBar(
@@ -58,11 +74,13 @@ class _HomePageState extends State<HomePage>
                 icon: new Icon(Icons.notifications),
               ),
               new Tab(
-                icon: new Icon(Icons.message),
+                icon: new Icon(Icons.person),
               ),
             ],
           ),
         ),
+
+
         backgroundColor: Colors.grey[300],
         body: SafeArea(
             child: Column(children: [
@@ -133,7 +151,7 @@ class _HomePageState extends State<HomePage>
                               onPressed: () => Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => LoginPage(),
+                                  builder: (context) => FormD(),
                                 ),
                               ),
                               style: TextButton.styleFrom(
