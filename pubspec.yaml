@@ -29,6 +29,7 @@ environment:
 dependencies:
   #dropdown
   dropdown_button2: ^1.5.2
+  flutter_chat_ui: ^1.5.8
   flutter:
     sdk: flutter
 

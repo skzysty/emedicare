@@ -34,11 +34,9 @@ class _FormDState extends State<FormD> {
                     onPressed: () {},
                     child: Text("Mandarine"),
                   )),
-                  SizedBox(height: 10),
-                  Text('Who is')
                 ],
               ),
-            ),
+            ), //New Line Button
             SizedBox(height: 10),
             Text('Who is')
           ],
