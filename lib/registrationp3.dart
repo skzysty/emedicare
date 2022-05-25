@@ -15,14 +15,6 @@ class RegisterPage3 extends StatefulWidget {
 }
 
 class _RegisterPage3State extends State<RegisterPage3> {
-  bool passwordVisible = false;
-  bool passwordConfrimationVisible = false;
-  void togglePassword() {
-    setState(() {
-      passwordVisible = !passwordVisible;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -119,7 +111,6 @@ class _RegisterPage3State extends State<RegisterPage3> {
                   child: Text("Sign Up"),
                 ),
               ),
-
 
               // CustomPrimaryButton(
               //   buttonColor: primaryBlue,

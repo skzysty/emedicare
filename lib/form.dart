@@ -1,8 +1,11 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:emedicare/widgets/Dropdown/allergies.dart';
 import 'package:emedicare/widgets/Dropdown/dropwhois.dart';
 import 'package:emedicare/widgets/Dropdown/howlongsymptom.dart';
 import 'package:emedicare/widgets/Dropdown/takemed.dart';
 import 'package:emedicare/widgets/Dropdown/whatsymptoms.dart';
+import 'package:emedicare/widgets/Dropdown/checkbox_check.dart';
 import 'package:flutter/material.dart';
 import 'theme.dart';
 
@@ -45,6 +48,7 @@ class _FormDState extends State<FormD> {
             ),
             SizedBox(height: 50),
             Text('Who is Experiencing these Symptoms?',
+                textAlign: TextAlign.right,
                 style: TextStyle(
                   color: Colors.black,
                   fontSize: 16,
@@ -121,9 +125,27 @@ class _FormDState extends State<FormD> {
               ),
               child: TakeMed(),
             ),
-            SizedBox(height: 10),
+            SizedBox(height: 30),
             //CheckboxListTile(
-
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                CheckboxForm(),
+                SizedBox(
+                  width: 12,
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "I hereby certify that the foregoing \ninformation is true and correct to the \nbest use of my knowledge and authorized \nBRTTH to use my personal information\n for the purpose of this consultattion",
+                      style: regular16pt.copyWith(color: textGrey),
+                      textAlign: TextAlign.justify,
+                    ),
+                  ],
+                ),
+              ],
+            ),
             // ),
           ],
         ),
