@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:emedicare/pages/home_page.dart';
 import 'package:emedicare/widgets/Dropdown/allergies.dart';
 import 'package:emedicare/widgets/Dropdown/dropwhois.dart';
 import 'package:emedicare/widgets/Dropdown/howlongsymptom.dart';
@@ -28,7 +29,6 @@ class _FormDState extends State<FormD> {
               color: Colors.white, fontWeight: FontWeight.bold, fontSize: 24),
         ),
       ),
-
       body: Center(
         child: Column(
           children: <Widget>[
@@ -152,6 +152,21 @@ class _FormDState extends State<FormD> {
                     ),
                   ],
                 ),
+                Container(
+                  alignment: Alignment.center,
+                  child: ElevatedButton(
+                    onPressed: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => HomePage(),
+                      ),
+                    ),
+                    style: TextButton.styleFrom(
+                      backgroundColor: Color(0xff2972ff),
+                    ),
+                    child: Text("Submit"),
+                  ),
+                )
               ],
             ),
             // ),
