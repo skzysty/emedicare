@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:emedicare/pages/model/chatMessageModel.dart';
 import 'package:flutter/material.dart';
@@ -37,7 +37,7 @@ class _ChatDetailPageState extends State<ChatDetailPage> {
         appBar: AppBar(
           elevation: 0,
           automaticallyImplyLeading: false,
-          backgroundColor: Colors.white,
+          backgroundColor: Colors.blue,
           flexibleSpace: SafeArea(
             child: Container(
               padding: EdgeInsets.only(right: 16),
@@ -49,7 +49,7 @@ class _ChatDetailPageState extends State<ChatDetailPage> {
                     },
                     icon: Icon(
                       Icons.arrow_back,
-                      color: Colors.black,
+                      color: Colors.white,
                     ),
                   ),
                   SizedBox(
@@ -71,15 +71,18 @@ class _ChatDetailPageState extends State<ChatDetailPage> {
                         Text(
                           "Dr. Kara Labacara",
                           style: TextStyle(
-                              fontSize: 16, fontWeight: FontWeight.w600),
+                              fontSize: 16,
+                              fontWeight: FontWeight.w600,
+                              color: Colors.white),
                         ),
                         SizedBox(
-                          height: 6,
+                          height: 2,
                         ),
                         Text(
                           "Online",
                           style: TextStyle(
-                              color: Colors.grey.shade600, fontSize: 13),
+                              color: Color.fromARGB(255, 200, 229, 252),
+                              fontSize: 13),
                         ),
                       ],
                     ),
@@ -112,13 +115,13 @@ class _ChatDetailPageState extends State<ChatDetailPage> {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
                         color: (messages[index].messageType == "receiver"
-                            ? Colors.grey.shade200
-                            : Colors.blue[200]),
+                            ? Color.fromARGB(255, 201, 201, 201)
+                            : Colors.blue),
                       ),
                       padding: EdgeInsets.all(16),
                       child: Text(
-                        messages[index].messageContent,
-                        style: TextStyle(fontSize: 15),
+                        (messages[index].messageContent),
+                        style: TextStyle(color: Colors.white, fontSize: 15),
                       ),
                     ),
                   ),

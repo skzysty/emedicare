@@ -74,8 +74,11 @@ class _ChatPagetState extends State<ChatPage> {
                   children: <Widget>[
                     Text(
                       "Conversations",
-                      style:
-                          TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                        fontSize: 32,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.blue,
+                      ),
                     ),
                     Container(
                       padding:
