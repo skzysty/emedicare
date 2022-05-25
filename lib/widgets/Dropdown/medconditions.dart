@@ -3,7 +3,7 @@ import 'package:dropdown_button2/dropdown_button2.dart';
 
 class MedCondition extends StatefulWidget {
   @override
-  _MedCondition createState() => _MedConditionState();
+  _MedConditionState createState() => _MedConditionState();
 }
 
 class _MedConditionState extends State<MedCondition> {
