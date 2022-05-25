@@ -16,44 +16,39 @@ class Doctor extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(left: 25.0),
-      child: Container(
-        padding: EdgeInsets.all(20),
-        decoration: BoxDecoration(
-          color: Colors.grey[350],
-          borderRadius: BorderRadius.circular(30),
-        ),
+    return
+      Padding(
+        padding: const EdgeInsets.only(left: 25.0),
+        child: Container(
+          padding: EdgeInsets.all(20),
+          decoration: BoxDecoration(
+            color: Colors.grey[350],
+            borderRadius: BorderRadius.circular(30),
+          ),
         child: Column(
           children: [
             ClipRRect(
               borderRadius: BorderRadius.circular(50),
               child: Image.asset(
                 doctorImagePath,
-                height: 100,
-              ),
+              height: 100,
+            ),
             ),
 
             SizedBox(
-              height: 05,
+                height: 05,
             ),
             //rating out of 5
 
             Row(
               children: [
                 Wrap(
-                    children: List.generate(
-                        5,
-                        (index) => Icon(
-                              Icons.star,
-                              color: Colors.lightBlue[300],
-                              size: 15,
-                            ))),
-                SizedBox(
-                  width: 10,
+                  children: List.generate(5, (index) => Icon(Icons.star, color: Colors.lightBlue[300], size: 15,)
+                )
                 ),
+                SizedBox(width: 10,),
                 Text(
-                  rating,
+                    rating,
                   style: TextStyle(
                     fontSize: 15,
                     color: Colors.grey[500],
@@ -69,7 +64,7 @@ class Doctor extends StatelessWidget {
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
             ),
             SizedBox(
-              height: 5,
+                height: 5,
             ),
 
             //doctor title
@@ -81,29 +76,22 @@ class Doctor extends StatelessWidget {
 
             Row(
               children: [
-                IconandTextWidget(
-                    icon: Icons.circle_sharp,
+                IconandTextWidget(icon: Icons.circle_sharp,
                     text: 'Available',
                     iconColor: Colors.blue),
-                SizedBox(
-                  width: 5,
-                ),
-                IconandTextWidget(
-                    icon: Icons.location_on,
+                SizedBox(width: 5,),
+                IconandTextWidget(icon: Icons.location_on,
                     text: '1.2km',
                     iconColor: Colors.green),
-                SizedBox(
-                  width: 5,
-                ),
-                IconandTextWidget(
-                    icon: Icons.access_time_rounded,
+                SizedBox(width: 5,),
+                IconandTextWidget(icon: Icons.access_time_rounded,
                     text: 'Offline',
                     iconColor: Colors.red)
               ],
             )
           ],
         ),
-      ),
-    );
+    ),
+      );
   }
 }
