@@ -17,7 +17,15 @@ class _FormDState extends State<FormD> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        backgroundColor: Colors.blue[350],
+        title: new Text(
+          'Consultation Form',
+          style: TextStyle(
+              color: Colors.white, fontWeight: FontWeight.bold, fontSize: 24),
+        ),
+      ),
+
       body: Center(
         child: Column(
           children: <Widget>[
@@ -28,17 +36,17 @@ class _FormDState extends State<FormD> {
                   Expanded(
                       child: OutlinedButton(
                     onPressed: () {},
+                    child: Text("Bikol"),
+                  )),
+                  Expanded(
+                      child: OutlinedButton(
+                    onPressed: () {},
                     child: Text("Filipino"),
                   )),
                   Expanded(
                       child: OutlinedButton(
                     onPressed: () {},
                     child: Text("English"),
-                  )),
-                  Expanded(
-                      child: OutlinedButton(
-                    onPressed: () {},
-                    child: Text("Mandarine"),
                   )),
                 ],
               ),

@@ -273,12 +273,6 @@ class _HomePageState extends State<HomePage>
                   scrollDirection: Axis.horizontal,
                   children: [
                     Doctor(
-                      doctorImagePath: 'lib/images/doctor1.jpg',
-                      rating: '5.0',
-                      doctorName: 'Dr. Jubelle S. Neo',
-                      doctorProfession: 'Surgeon',
-                    ),
-                    Doctor(
                       doctorImagePath:
                       'lib/images/ashkan-forouzani-DPEPYPBZpB8-unsplash.jpg',
                       rating: '5.0',

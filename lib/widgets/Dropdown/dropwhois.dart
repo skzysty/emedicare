@@ -7,7 +7,7 @@ class WhoSymptoms extends StatefulWidget {
 }
 
 class _WhoSymptomsState extends State<WhoSymptoms> {
-  List<String> genderitems = ['Michelle', 'Alliah', 'Noel', 'Kian'];
+  List<String> genderitems = ['You', 'My Child', 'Others'];
   String? selectedvalue;
 
   @override
