@@ -179,6 +179,7 @@ class _RegisterPageState2 extends State<RegisterPage2> {
                                 '${date.year}/${date.month}/${date.day}',
                                 style: TextStyle(
                                   fontSize: 16,
+                                  color: Colors.black45,
                                 ),
                               ),
                             ),
