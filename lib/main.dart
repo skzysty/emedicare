@@ -7,7 +7,6 @@ import 'login_page.dart';
 import 'widgets/Dropdown/dropcountry.dart';
 import 'registrationp3.dart';
 
-
 void main() {
   runApp(const MyApp());
 }
@@ -18,7 +17,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      home: LoginPage(),
     );
   }
 }

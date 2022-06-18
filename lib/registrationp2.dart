@@ -17,6 +17,7 @@ class RegisterPage2 extends StatefulWidget {
 class _RegisterPageState2 extends State<RegisterPage2> {
   bool passwordVisible = false;
   bool passwordConfrimationVisible = false;
+  DateTime date = DateTime.now();
   void togglePassword() {
     setState(() {
       passwordVisible = !passwordVisible;
@@ -128,12 +129,62 @@ class _RegisterPageState2 extends State<RegisterPage2> {
                     ),
 
                     //DatePicker
-                    Container(
-                      alignment: Alignment.topLeft,
-                      child: Padding(
-                        padding: EdgeInsets.fromLTRB(0, 0, 0, 5),
-                        child: DatePicker(),
-                      ),
+                    Row(
+                      children: [
+                        Container(
+                          width: 165,
+                          height: 60,
+                          child: OutlinedButton(
+                            style: ButtonStyle(
+                              shape: MaterialStateProperty.all<
+                                  RoundedRectangleBorder>(
+                                RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(50.0)),
+                              ),
+                            ),
+                            onPressed: () async {
+                              DateTime? newDate = await showDatePicker(
+                                  context: context,
+                                  initialDate: date,
+                                  firstDate: DateTime(1930),
+                                  lastDate: DateTime(2025));
+                              if (newDate == null) return;
+                              setState(() => date = newDate);
+                            },
+                            child: Padding(
+                              padding: const EdgeInsets.only(right: 50.0),
+                              child: Text(
+                                'Birthday',
+                                style: TextStyle(
+                                    fontSize: 16, color: Colors.black12),
+                              ),
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Container(
+                          width: 165,
+                          height: 60,
+                          decoration: BoxDecoration(
+                            color: textWhiteGrey,
+                            borderRadius: BorderRadius.circular(50),
+                          ),
+                          child: Align(
+                            alignment: Alignment.center,
+                            child: Padding(
+                              padding: const EdgeInsets.only(right: 30.0),
+                              child: Text(
+                                '${date.year}/${date.month}/${date.day}',
+                                style: TextStyle(
+                                  fontSize: 16,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
 
                     SizedBox(
@@ -182,11 +233,6 @@ class _RegisterPageState2 extends State<RegisterPage2> {
                 ),
               ),
 
-              // CustomPrimaryButton(
-              //   buttonColor: primaryBlue,
-              //   textValue: 'continue',
-              //   textColor: Colors.white,
-              // ),
               SizedBox(
                 height: 25,
               ),
