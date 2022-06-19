@@ -8,6 +8,7 @@ import 'package:emedicare/pages/page/resources_page.dart';
 import 'package:emedicare/pages/page/samples_page.dart';
 import 'package:emedicare/pages/page/testing_page.dart';
 import 'package:emedicare/pages/provider/navigation_provider.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -17,7 +18,7 @@ class NavigationDrawerWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final safeArea =
-    EdgeInsets.only(top: MediaQuery.of(context).viewPadding.top);
+        EdgeInsets.only(top: MediaQuery.of(context).viewPadding.top);
 
     // final provider = Provider.of<NavigationProvider>(context);
     // final isCollapsed = provider.isCollapsed;
@@ -50,26 +51,22 @@ class NavigationDrawerWidget extends StatelessWidget {
               // buildCollapseIcon(context, isCollapsed),
               const SizedBox(height: 12),
 
-                //logout
+              //logout
               Padding(
                 padding: const EdgeInsets.all(20.0),
-                child: _createFooterItem(icon: Icons.exit_to_app,
+                child: _createFooterItem(
+                    icon: Icons.exit_to_app,
                     text: 'Logout',
-                    onTap: () => Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => LoginPage(),
-                      ),
-                    ),
+                    onTap: () {
+                      FirebaseAuth.instance.signOut();
+                    }),
               ),
-              ),
-                ],
+            ],
           ),
         ),
       ),
     );
   }
-
 
   Widget buildList({
     required bool isCollapsed,
@@ -96,8 +93,8 @@ class NavigationDrawerWidget extends StatelessWidget {
 
   void selectItem(BuildContext context, int index) {
     final navigateTo = (page) => Navigator.of(context).push(MaterialPageRoute(
-      builder: (context) => page,
-    ));
+          builder: (context) => page,
+        ));
 
     Navigator.of(context).pop();
 
@@ -136,14 +133,14 @@ class NavigationDrawerWidget extends StatelessWidget {
       color: Colors.transparent,
       child: isCollapsed
           ? ListTile(
-        title: leading,
-        onTap: onClicked,
-      )
+              title: leading,
+              onTap: onClicked,
+            )
           : ListTile(
-        leading: leading,
-        title: Text(text, style: TextStyle(color: color, fontSize: 16)),
-        onTap: onClicked,
-      ),
+              leading: leading,
+              title: Text(text, style: TextStyle(color: color, fontSize: 16)),
+              onTap: onClicked,
+            ),
     );
   }
 
@@ -179,18 +176,24 @@ class NavigationDrawerWidget extends StatelessWidget {
   Widget buildHeader(bool isCollapsed) => isCollapsed
       ? FlutterLogo(size: 48)
       : Row(
-    children: [
-      const SizedBox(width: 24),
-      FlutterLogo(size: 48),
-      const SizedBox(width: 16),
-      Text(
-        'E-Medicare',
-        style: TextStyle(fontSize: 32, color: Colors.white, fontWeight: FontWeight.bold),
-      ),
-    ],
-  );
+          children: [
+            const SizedBox(width: 24),
+            FlutterLogo(size: 48),
+            const SizedBox(width: 16),
+            Text(
+              'E-Medicare',
+              style: TextStyle(
+                  fontSize: 32,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold),
+            ),
+          ],
+        );
 
-  Widget _createFooterItem({required IconData icon, required String text, required GestureTapCallback onTap}){
+  Widget _createFooterItem(
+      {required IconData icon,
+      required String text,
+      required GestureTapCallback onTap}) {
     return ListTile(
       title: Row(
         children: <Widget>[
@@ -204,5 +207,4 @@ class NavigationDrawerWidget extends StatelessWidget {
       onTap: onTap,
     );
   }
-
 }
