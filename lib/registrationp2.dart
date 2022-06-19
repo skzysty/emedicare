@@ -15,14 +15,7 @@ class RegisterPage2 extends StatefulWidget {
 }
 
 class _RegisterPageState2 extends State<RegisterPage2> {
-  bool passwordVisible = false;
-  bool passwordConfrimationVisible = false;
   DateTime date = DateTime.now();
-  void togglePassword() {
-    setState(() {
-      passwordVisible = !passwordVisible;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -218,20 +211,24 @@ class _RegisterPageState2 extends State<RegisterPage2> {
 
               //Temporary Button
 
-              Container(
-                alignment: Alignment.center,
-                child: ElevatedButton(
-                  onPressed: () => Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => RegisterPage3(),
+              Row(
+                children: [
+                  Container(
+                    alignment: Alignment.center,
+                    child: ElevatedButton(
+                      onPressed: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => RegisterPage3(),
+                        ),
+                      ),
+                      style: TextButton.styleFrom(
+                        backgroundColor: Color(0xff2972ff),
+                      ),
+                      child: Text("Next"),
                     ),
                   ),
-                  style: TextButton.styleFrom(
-                    backgroundColor: Color(0xff2972ff),
-                  ),
-                  child: Text("Next"),
-                ),
+                ],
               ),
 
               SizedBox(
