@@ -1,10 +1,13 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:provider/provider.dart';
 import 'package:emedicare/pages/home_page.dart';
 import 'package:emedicare/registration.dart';
 import 'package:emedicare/theme.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:emedicare/services/auth_services.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -16,17 +19,17 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   //Text Controller
   final _emailController = TextEditingController();
-  final _paswwordController = TextEditingController();
+  final _passwordController = TextEditingController();
   Future logIn() async {
     await FirebaseAuth.instance.signInWithEmailAndPassword(
         email: _emailController.text.trim(),
-        password: _paswwordController.text.trim());
+        password: _passwordController.text.trim());
   }
 
   @override
   void dispose() {
     _emailController.dispose();
-    _paswwordController.dispose();
+    _passwordController.dispose();
     super.dispose();
   }
 
@@ -102,7 +105,7 @@ class _LoginPageState extends State<LoginPage> {
                   child: Padding(
                     padding: const EdgeInsets.only(left: 5.0),
                     child: TextField(
-                      controller: _paswwordController,
+                      controller: _passwordController,
                       obscureText: true,
                       decoration: InputDecoration(
                         prefixIcon: Icon(
@@ -138,28 +141,55 @@ class _LoginPageState extends State<LoginPage> {
               // ),
 
               // sign in button
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                child: GestureDetector(
-                  onTap: logIn,
-                  child: Container(
-                    padding: EdgeInsets.all(20),
-                    decoration: BoxDecoration(
-                      color: Colors.blue,
-                      borderRadius: BorderRadius.circular(12),
+              // Padding(
+              //   padding: const EdgeInsets.symmetric(horizontal: 25.0),
+              //   child: GestureDetector(
+              //     onTap: logIn,
+              //     child: Container(
+              //       padding: EdgeInsets.all(20),
+              //       decoration: BoxDecoration(
+              //         color: Colors.blue,
+              //         borderRadius: BorderRadius.circular(12),
+              //       ),
+              //       child: Center(
+              //           child: Text(
+              //         'Log in',
+              //         style: TextStyle(
+              //           color: Colors.white,
+              //           fontWeight: FontWeight.bold,
+              //           fontSize: 17,
+              //         ),
+              //       )),
+              //     ),
+              //   ),
+              // ),
+
+                  Container(
+                    height: 40,
+                    width: MediaQuery.of(context).size.width / 3,
+                    color: Colors.blue,
+                    child: FlatButton(
+                      onPressed: () {
+                        final String email = _emailController.text.trim();
+                        final String password = _passwordController.text.trim();
+
+                        if(email.isEmpty){
+                          print("Email is Empty");
+                        } else {
+                          if(password.isEmpty){
+                            print("Password is Empty");
+                          } else {
+                            context.read<AuthService>().login(
+                              email,
+                              password,
+                            );
+                          }
+                        }
+                      },
+                      child: Text("LOG IN"),
                     ),
-                    child: Center(
-                        child: Text(
-                      'Log in',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 17,
-                      ),
-                    )),
                   ),
-                ),
-              ),
+
 
               SizedBox(height: 25),
               // not a member? register now

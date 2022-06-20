@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:emedicare/form.dart';
 import 'package:emedicare/login_page.dart';
 import 'package:emedicare/screens/chathomePage.dart';
@@ -6,6 +7,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:emedicare/util/doctor.dart';
 import 'package:emedicare/util/service_card.dart';
+
 
 
 class HomePage extends StatefulWidget {
@@ -26,7 +28,7 @@ class _HomePageState extends State<HomePage>
 
 
   void initState() {
-    _controller = TabController(length: 5, vsync: this);
+    _controller = TabController(length: 3, vsync: this);
 
   }
 //try
@@ -64,15 +66,15 @@ class _HomePageState extends State<HomePage>
               new Tab(
                 icon: new Icon(Icons.home),
               ),
-              new Tab(
-                icon: new Icon(Icons.supervisor_account),
-              ),
+              // new Tab(
+              //   icon: new Icon(Icons.supervisor_account),
+              // ),
               new Tab(
                 icon: new Icon(Icons.add),
               ),
-              new Tab(
-                icon: new Icon(Icons.notifications),
-              ),
+              // new Tab(
+              //   icon: new Icon(Icons.notifications),
+              // ),
               new Tab(
                 icon: new Icon(Icons.person),
               ),
@@ -87,23 +89,23 @@ class _HomePageState extends State<HomePage>
 
               SizedBox(height: 10),
 
-              // search bar
-              Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                  child: Container(
-                      decoration: BoxDecoration(
-                        color: Colors.grey[100],
-                        borderRadius: BorderRadius.circular(50),
-                      ),
-                      child: TextField(
-                        decoration: InputDecoration(
-                          prefixIcon: Icon(Icons.search),
-                          border: InputBorder.none,
-                          hintText: 'Search something',
-                        ),
-                      ))),
-
-              SizedBox(height: 20),
+              // // search bar
+              // Padding(
+              //     padding: const EdgeInsets.symmetric(horizontal: 25.0),
+              //     child: Container(
+              //         decoration: BoxDecoration(
+              //           color: Colors.grey[100],
+              //           borderRadius: BorderRadius.circular(50),
+              //         ),
+              //         child: TextField(
+              //           decoration: InputDecoration(
+              //             prefixIcon: Icon(Icons.search),
+              //             border: InputBorder.none,
+              //             hintText: 'Search something',
+              //           ),
+              //         ))),
+              //
+              // SizedBox(height: 20),
 
               // card -> message
               Padding(
@@ -115,11 +117,11 @@ class _HomePageState extends State<HomePage>
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: Row(children: [
-                    Container(
-                      height: 100,
-                      width: 100,
-                      color: Colors.blue,
-                    ),
+                    // Container(
+                    //   height: 100,
+                    //   width: 100,
+                    //   color: Colors.blue,
+                    // ),
                     SizedBox(
                       width: 20,
                     ),
@@ -182,127 +184,127 @@ class _HomePageState extends State<HomePage>
               SizedBox(height: 10),
 
               // horizonal listeview -> categories
-              Container(
-                height: 80,
-                child: ListView(scrollDirection: Axis.horizontal, children: [
-                  ServiceCard(
-                    serviceCategory: 'Out-Patient',
-                    iconImagePath: 'lib/icons/doctor.png',
-                  ),
-                  ServiceCard(
-                    serviceCategory: 'Emergency Department',
-                    iconImagePath: 'lib/icons/doctor.png',
-                  ),
-                  ServiceCard(
-                    serviceCategory: 'Pediatrics',
-                    iconImagePath: 'lib/icons/doctor.png',
-                  ),
-                  ServiceCard(
-                    serviceCategory: 'Internal Medicine',
-                    iconImagePath: 'lib/icons/doctor.png',
-                  ),
-                  ServiceCard(
-                    serviceCategory: 'OB-Gyne',
-                    iconImagePath: 'lib/icons/doctor.png',
-                  ),
-                  ServiceCard(
-                    serviceCategory: 'Surgery',
-                    iconImagePath: 'lib/icons/doctor.png',
-                  ),
-                  ServiceCard(
-                    serviceCategory: 'Anesthesia',
-                    iconImagePath: 'lib/icons/doctor.png',
-                  ),
-                  ServiceCard(
-                    serviceCategory: 'Laboratory',
-                    iconImagePath: 'lib/icons/doctor.png',
-                  ),
-                  ServiceCard(
-                    serviceCategory: 'Radiology',
-                    iconImagePath: 'lib/icons/doctor.png',
-                  ),
-                  ServiceCard(
-                    serviceCategory: 'Medicine',
-                    iconImagePath: 'lib/icons/doctor.png',
-                  ),
-                  ServiceCard(
-                    serviceCategory: 'Rehabilitation',
-                    iconImagePath: 'lib/icons/doctor.png',
-                  ),
-                  ServiceCard(
-                    serviceCategory: 'Dental',
-                    iconImagePath: 'lib/icons/doctor.png',
-                  ),
-                  ServiceCard(
-                    serviceCategory: 'Covid',
-                    iconImagePath: 'lib/icons/doctor.png',
-                  ),
-                ]),
-              ),
+              // Container(
+              //   height: 80,
+              //   child: ListView(scrollDirection: Axis.horizontal, children: [
+              //     ServiceCard(
+              //       serviceCategory: 'Out-Patient',
+              //       iconImagePath: 'lib/icons/doctor.png',
+              //     ),
+              //     ServiceCard(
+              //       serviceCategory: 'Emergency Department',
+              //       iconImagePath: 'lib/icons/doctor.png',
+              //     ),
+              //     ServiceCard(
+              //       serviceCategory: 'Pediatrics',
+              //       iconImagePath: 'lib/icons/doctor.png',
+              //     ),
+              //     ServiceCard(
+              //       serviceCategory: 'Internal Medicine',
+              //       iconImagePath: 'lib/icons/doctor.png',
+              //     ),
+              //     ServiceCard(
+              //       serviceCategory: 'OB-Gyne',
+              //       iconImagePath: 'lib/icons/doctor.png',
+              //     ),
+              //     ServiceCard(
+              //       serviceCategory: 'Surgery',
+              //       iconImagePath: 'lib/icons/doctor.png',
+              //     ),
+              //     ServiceCard(
+              //       serviceCategory: 'Anesthesia',
+              //       iconImagePath: 'lib/icons/doctor.png',
+              //     ),
+              //     ServiceCard(
+              //       serviceCategory: 'Laboratory',
+              //       iconImagePath: 'lib/icons/doctor.png',
+              //     ),
+              //     ServiceCard(
+              //       serviceCategory: 'Radiology',
+              //       iconImagePath: 'lib/icons/doctor.png',
+              //     ),
+              //     ServiceCard(
+              //       serviceCategory: 'Medicine',
+              //       iconImagePath: 'lib/icons/doctor.png',
+              //     ),
+              //     ServiceCard(
+              //       serviceCategory: 'Rehabilitation',
+              //       iconImagePath: 'lib/icons/doctor.png',
+              //     ),
+              //     ServiceCard(
+              //       serviceCategory: 'Dental',
+              //       iconImagePath: 'lib/icons/doctor.png',
+              //     ),
+              //     ServiceCard(
+              //       serviceCategory: 'Covid',
+              //       iconImagePath: 'lib/icons/doctor.png',
+              //     ),
+              //   ]),
+              // ),
+              //
+              // SizedBox(height: 25),
+              // //doctor list
 
-              SizedBox(height: 25),
-              //doctor list
-
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      'Doctor List',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20,
-                      ),
-                    ),
-                    Text(
-                      'See more',
-                      style: TextStyle(
-                        fontSize: 16,
-                        color: Colors.grey[500],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-
-              SizedBox(height: 15),
-
-              Expanded(
-                child: ListView(
-                  scrollDirection: Axis.horizontal,
-                  children: [
-                    Doctor(
-                      doctorImagePath:
-                      'lib/images/ashkan-forouzani-DPEPYPBZpB8-unsplash.jpg',
-                      rating: '5.0',
-                      doctorName: 'Dr. S. Wong Soap',
-                      doctorProfession: 'Dermatologist',
-                    ),
-                    Doctor(
-                      doctorImagePath:
-                      'lib/images/bruno-rodrigues-279xIHymPYY-unsplash.jpg',
-                      rating: '5.0',
-                      doctorName: 'Dr.Abdhul Salsalani',
-                      doctorProfession: 'Dentist',
-                    ),
-                    Doctor(
-                      doctorImagePath:
-                      'lib/images/rian-ramirez-rm7rZYdl3rY-unsplash.jpg',
-                      rating: '5.0',
-                      doctorName: 'Dr. Kwak kwak',
-                      doctorProfession: 'Physician',
-                    ),
-                    Doctor(
-                      doctorImagePath:
-                      'lib/images/usman-yousaf-SakqLf78KVo-unsplash.jpg',
-                      rating: '5.0',
-                      doctorName: 'Dr. En I. Tee',
-                      doctorProfession: 'Washing Machine Specialist',
-                    ),
-                  ],
-                ),
-              )
+              // Padding(
+              //   padding: const EdgeInsets.symmetric(horizontal: 25.0),
+              //   child: Row(
+              //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              //     children: [
+              //       Text(
+              //         'Doctor List',
+              //         style: TextStyle(
+              //           fontWeight: FontWeight.bold,
+              //           fontSize: 20,
+              //         ),
+              //       ),
+              //       Text(
+              //         'See more',
+              //         style: TextStyle(
+              //           fontSize: 16,
+              //           color: Colors.grey[500],
+              //         ),
+              //       ),
+              //     ],
+              //   ),
+              // ),
+              //
+              // SizedBox(height: 15),
+              //
+              // Expanded(
+              //   child: ListView(
+              //     scrollDirection: Axis.horizontal,
+              //     children: [
+              //       Doctor(
+              //         doctorImagePath:
+              //         'lib/images/ashkan-forouzani-DPEPYPBZpB8-unsplash.jpg',
+              //         rating: '5.0',
+              //         doctorName: 'Dr. S. Wong Soap',
+              //         doctorProfession: 'Dermatologist',
+              //       ),
+              //       Doctor(
+              //         doctorImagePath:
+              //         'lib/images/bruno-rodrigues-279xIHymPYY-unsplash.jpg',
+              //         rating: '5.0',
+              //         doctorName: 'Dr.Abdhul Salsalani',
+              //         doctorProfession: 'Dentist',
+              //       ),
+              //       Doctor(
+              //         doctorImagePath:
+              //         'lib/images/rian-ramirez-rm7rZYdl3rY-unsplash.jpg',
+              //         rating: '5.0',
+              //         doctorName: 'Dr. Kwak kwak',
+              //         doctorProfession: 'Physician',
+              //       ),
+              //       Doctor(
+              //         doctorImagePath:
+              //         'lib/images/usman-yousaf-SakqLf78KVo-unsplash.jpg',
+              //         rating: '5.0',
+              //         doctorName: 'Dr. En I. Tee',
+              //         doctorProfession: 'Washing Machine Specialist',
+              //       ),
+              //     ],
+              //   ),
+              // )
             ])));
   }
 }
