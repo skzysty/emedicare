@@ -17,9 +17,18 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  //Text Controller
-  final _emailController = TextEditingController();
-  final _passwordController = TextEditingController();
+  TextEditingController _emailController = new TextEditingController();
+  TextEditingController _passwordController = new TextEditingController();
+
+  bool passwordVisible = false;
+  bool passwordConfrimationVisible = false;
+
+  void togglePassword() {
+    setState(() {
+      passwordVisible = !passwordVisible;
+    });
+  }
+
   Future logIn() async {
     await FirebaseAuth.instance.signInWithEmailAndPassword(
         email: _emailController.text.trim(),
@@ -106,14 +115,24 @@ class _LoginPageState extends State<LoginPage> {
                     padding: const EdgeInsets.only(left: 5.0),
                     child: TextField(
                       controller: _passwordController,
-                      obscureText: true,
+                      obscureText: !passwordVisible,
                       decoration: InputDecoration(
                         prefixIcon: Icon(
                           Icons.lock,
                           size: 21,
                         ),
-                        border: InputBorder.none,
                         hintText: 'Password',
+                        suffixIcon: IconButton(
+                          color: textGrey,
+                          splashRadius: 1,
+                          icon: Icon(passwordVisible
+                              ? Icons.visibility_outlined
+                              : Icons.visibility_off_outlined),
+                          onPressed: togglePassword,
+                        ),
+                        border: OutlineInputBorder(
+                          borderSide: BorderSide.none,
+                        ),
                       ),
                     ),
                   ),
