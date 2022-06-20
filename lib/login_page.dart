@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:provider/provider.dart';
 import 'package:emedicare/pages/home_page.dart';
 import 'package:emedicare/registration.dart';
@@ -193,7 +194,7 @@ class _LoginPageState extends State<LoginPage> {
                         final String password = _passwordController.text.trim();
 
                         if(email.isEmpty){
-                          print("Email is Empty");
+                          Fluttertoast.showToast(msg: "Email is Empty");
                         } else {
                           if(password.isEmpty){
                             print("Password is Empty");

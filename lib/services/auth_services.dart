@@ -22,6 +22,7 @@ class AuthService {
       await _auth.createUserWithEmailAndPassword(email: email, password: password).then((value) async {
         User? user = FirebaseAuth.instance.currentUser;
 
+
         await FirebaseFirestore.instance.collection("users").doc(user?.uid).set({
           'uid': user?.uid,
           'email': email,
@@ -33,4 +34,23 @@ class AuthService {
       return e;
     }
   }
+  // Future<Object> registration(String email, String password, String fname, String mname, String lname, String phone) async {
+  //   try{
+  //     await _auth.createUserProfile(fname: fname, mname: mname, lname: lname, phone: phone).then((value) async {
+  //       User? user = FirebaseAuth.instance.currentUser;
+  //
+  //
+  //       await FirebaseFirestore.instance.collection("users").doc(user?.uid).set({
+  //         'uid': user?.uid,
+  //         'fname': fname,
+  //         'mname': mname,
+  //         'lname': lname,
+  //         'phone': phone,
+  //       });
+  //     });
+  //     return "Continue";
+  //   } catch(e) {
+  //     return e;
+  //   }
+  // }
 }

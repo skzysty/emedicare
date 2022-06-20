@@ -7,6 +7,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'login_page.dart';
 import 'main_page.dart';
 
+
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 

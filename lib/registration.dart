@@ -11,6 +11,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'theme.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class RegisterPage extends StatefulWidget {
 
@@ -36,7 +37,6 @@ class _RegisterPageState extends State<RegisterPage> {
 
   @override
   Widget build(BuildContext context) {
-    final ref = referenceDatase.reference();
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: Colors.white,
@@ -212,6 +212,7 @@ class _RegisterPageState extends State<RegisterPage> {
                         'email': email,
                         'password': password,
                       });
+                      Fluttertoast.showToast(msg: "Account created successfully :) ");
                     });
                   }
                 }
@@ -235,15 +236,15 @@ class _RegisterPageState extends State<RegisterPage> {
           //     ),
           //     child: Text("Sign Up"),
           //   ),
-          // ),
+          ),
 
 //Main Button after data fetching
 
               // CustomPrimaryButton(
               //   buttonColor: primaryBlue,
               //   textValue: 'Sign Up',
-              //   textColor: Colors.white,
-              ),
+              // //   textColor: Colors.white,
+              // ),
 
 
               // SizedBox(
